@@ -1,9 +1,10 @@
 import webpack from 'webpack';
 import path from 'path';
-
+// https://github.com/webpack/webpack/issues/2145 : debugging issue fixed there
+// https://webpack.github.io/docs/configuration.html : see devtool section for debugging tips
 export default {
   debug: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   noInfo: false,
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
